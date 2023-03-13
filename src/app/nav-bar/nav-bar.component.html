@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+<span><mat-icon aria-hidden="false" aria-label="local_hospital icon" fontIcon="local_hospital"></mat-icon>  Practice Management</span>
+<div class="spacer"></div>
+
+<span *ngIf="(auth.isAuthenticated$ | async) === false">
+<a mat-raised-button color="accent" (click)="loginWithRedirect()" routerLink="dashboard">Login</a>
+</span>
+<span *ngIf="(auth.isAuthenticated$ | async)">
+    <a mat-raised-button color="accent" (click)="logout()">Logout</a>
+    </span>
+</mat-toolbar>
+
+
+
